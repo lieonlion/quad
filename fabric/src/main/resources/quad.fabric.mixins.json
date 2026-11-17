@@ -5,8 +5,6 @@
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "FabricBaseFireBlockMixin",
-    "FabricConduitBlockEntityMixin",
     "FabricTntBlockMixin"
   ],
   "client": [],

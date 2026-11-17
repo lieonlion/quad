@@ -4,8 +4,6 @@
   "package": "dev.lieonlion.quad.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "NeoBaseFireBlockMixin",
-    "NeoConduitBlockEntityMixin",
     "NeoTntBlockMixin"
   ],
   "client": [],

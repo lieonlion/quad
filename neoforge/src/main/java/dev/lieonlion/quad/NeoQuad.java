@@ -1,6 +1,5 @@
 package dev.lieonlion.quad;
 
-import dev.lieonlion.quad.registry.NeoQuadFuelRegistry;
 import dev.lieonlion.quad.tags.QuadItemTags;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.neoforged.bus.api.IEventBus;
@@ -24,7 +23,5 @@ public class NeoQuad {
                 }
             }
         });
-
-        NeoForge.EVENT_BUS.addListener(NeoQuadFuelRegistry::registerQuadFuelItems);
     }
 }

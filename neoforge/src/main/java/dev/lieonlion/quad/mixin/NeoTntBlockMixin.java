@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.TntBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.phys.BlockHitResult;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,7 +26,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = TntBlock.class, priority = 1004)
 public abstract class NeoTntBlockMixin extends Block {
-    @Shadow public abstract boolean onCaughtFire(BlockState state, Level level, BlockPos pos, @Nullable Direction face, @Nullable LivingEntity igniter);
+    @Shadow public abstract boolean onCaughtFire(@NonNull BlockState state, @NonNull Level world, @NonNull BlockPos pos, Direction face, LivingEntity igniter, @NonNull ItemStack ignitionItem);
 
     public NeoTntBlockMixin(Properties properties) {
         super(properties);
@@ -36,7 +36,7 @@ public abstract class NeoTntBlockMixin extends Block {
     private void applyTagFireLighters(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result, CallbackInfoReturnable<InteractionResult> cir) {
         cir.cancel();
         if (QuadUtil.isFireLighter(stack)) {
-            if (onCaughtFire(state, level, pos, result.getDirection(), player)) {
+            if (this.onCaughtFire(state, level, pos, result.getDirection(), player, stack)) {
                 level.setBlock(pos, Blocks.AIR.defaultBlockState(), 11);
                 QuadUtil.usedFireLighter(level, pos, player, hand, stack);
             } else if (level instanceof ServerLevel serverLevel && !serverLevel.getGameRules().get(GameRules.TNT_EXPLODES)) {

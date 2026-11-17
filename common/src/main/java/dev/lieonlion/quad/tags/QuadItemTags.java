@@ -6,20 +6,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
 public class QuadItemTags {
-    public static final TagKey<Item> FUEL_LAVA = create("fuel/lava"); //20000
-    public static final TagKey<Item> FUEL_COAL_BLOCK = create("fuel/coal_block"); //16000
-    public static final TagKey<Item> FUEL_DRIED_KELP_BLOCK = create("fuel/dried_kelp_block"); //4001
-    public static final TagKey<Item> FUEL_BLAZE_ROD = create("fuel/blaze_rod"); //2400
-    public static final TagKey<Item> FUEL_COAL = create("fuel/coal"); //1600
-    public static final TagKey<Item> FUEL_BOAT = create("fuel/boat"); //1200
-    public static final TagKey<Item> FUEL_HANGING_SIGN = create("fuel/hanging_sign"); //800
-    public static final TagKey<Item> FUEL_WOOD = create("fuel/wood"); //300
-    public static final TagKey<Item> FUEL_WOOD_TOOL = create("fuel/wood_tool"); //200
-    public static final TagKey<Item> FUEL_WOOD_SLAB = create("fuel/wood_slab"); //150
-    public static final TagKey<Item> FUEL_WOOL = create("fuel/wool"); //100
-    public static final TagKey<Item> FUEL_CARPET = create("fuel/carpet"); //67
-    public static final TagKey<Item> FUEL_BAMBOO = create("fuel/bamboo"); //50
-
     public static final TagKey<Item> IMMUNE_CACTUS = create("immune/cactus");
     public static final TagKey<Item> IMMUNE_EXPLOSION = create("immune/explosion");
     public static final TagKey<Item> IMMUNE_FIRE = create("immune/fire");

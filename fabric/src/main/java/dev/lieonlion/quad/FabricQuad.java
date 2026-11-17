@@ -1,10 +1,8 @@
 package dev.lieonlion.quad;
 
-import dev.lieonlion.quad.registry.FabricQuadFuelRegistry;
 import dev.lieonlion.quad.tags.QuadItemTags;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
-import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.minecraft.world.entity.item.ItemEntity;
 
 public class FabricQuad implements ModInitializer {
@@ -23,7 +21,5 @@ public class FabricQuad implements ModInitializer {
                 }
             }
         });
-
-        FuelValueEvents.BUILD.register(FabricQuadFuelRegistry::registerQuadFuelItems);
     }
 }
